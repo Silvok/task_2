@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Pendaftaran</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Detail Informasi Pendaftar</h1>
+        <table class="info-table">
+            <tr>
+                <th>Nama</th>
+                <td id="nama"></td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td id="email"></td>
+            </tr>
+            <tr>
+                <th>Usia</th>
+                <td id="usia"></td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        // Fungsi untuk mendapatkan nilai dari query string
+        function ambilParameterQueryString(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Isi tabel dengan data dari query string
+        document.getElementById('nama').innerText = ambilParameterQueryString('name');
+        document.getElementById('email').innerText = ambilParameterQueryString('email');
+        document.getElementById('usia').innerText = ambilParameterQueryString('age');
+    </script>
+</body>
+</html>
